@@ -1,0 +1,35 @@
+{
+    "version": 1,
+    "name": "New Actions",
+    "maps": [
+        {
+            "name": "player",
+            "id": "52a87a5c-bf45-4572-921d-2e6f41ad39b3",
+            "actions": [
+                {
+                    "name": "jump",
+                    "type": "Button",
+                    "id": "0e23f641-3001-4929-b23b-28432b285597",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "5fd620e4-53b2-4325-8054-beaaa641892d",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
