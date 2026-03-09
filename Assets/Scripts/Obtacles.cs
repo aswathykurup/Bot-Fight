@@ -23,7 +23,7 @@ public class Obtacles : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             FindFirstObjectByType<CameraShake>().OnTriggerShake(0.3f, 0.2f);
-            ScoreManager.Instance.UpdateHealth(10);
+            ScoreManager.Instance.UpdateHealth(10,false);
         }
     }
 }

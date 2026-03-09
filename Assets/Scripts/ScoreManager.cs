@@ -8,7 +8,7 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] private int score = 0;
     public TextMeshProUGUI scoretext;
 
-    [SerializeField]private int playerHealth = 100;
+    [SerializeField] private int playerHealth = 100;
     public TextMeshProUGUI healthtext;
 
     public TextMeshProUGUI gametext;
@@ -17,6 +17,10 @@ public class ScoreManager : MonoBehaviour
     public GameObject pauseMenu;
 
     public GameObject GameOverMenu;
+
+    [SerializeField] private PlayerController player;
+
+    [SerializeField] private float bulletSpeed = 20;
 
 
     private void Awake()
@@ -49,15 +53,24 @@ public class ScoreManager : MonoBehaviour
             GameOver();
         }
     }
-    public void UpdateHealth(int damage)
+    public void UpdateHealth(int damage, bool restore)
     {
-        playerHealth-= damage;
-        healthtext.text = playerHealth.ToString();
-        if( playerHealth <= 0)
-        {
-            GameOver();
-        }
 
+        if (restore)
+        {
+            playerHealth = 100;
+        }
+        else
+        {
+            playerHealth -= damage;
+            if (playerHealth <= 0)
+            {
+                GameOver();
+            }
+        }
+           
+        healthtext.text = playerHealth.ToString();
+        
 
     }
     private void GameOver()
@@ -98,5 +111,16 @@ public class ScoreManager : MonoBehaviour
         Application.Quit(); 
 
     }
-
+    public void UpdateSpeed()
+    {
+        player.moveSpeed += 3;
+    }
+    public float GetBulletSpeed()
+    {
+        return bulletSpeed;
+    }
+    public void UpdatebulletSpeed()
+    {
+        bulletSpeed += 10;
+    }
 }

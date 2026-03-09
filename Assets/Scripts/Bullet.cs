@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public float speed = 40f;
     public float lifetime = 5f;
     public float damage = 25f;
     private Rigidbody rb;
@@ -18,7 +17,7 @@ public class Bullet : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        rb.linearVelocity = transform.forward * speed;
+        rb.linearVelocity = transform.forward * ScoreManager.Instance.GetBulletSpeed();
         Destroy(gameObject, lifetime);
         
     }
